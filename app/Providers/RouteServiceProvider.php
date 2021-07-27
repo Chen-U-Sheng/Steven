@@ -60,4 +60,12 @@ class RouteServiceProvider extends ServiceProvider
             return Limit::perMinute(60)->by(optional($request->user())->id ?: $request->ip());
         });
     }
+    /*protected function mapApiRoutes()
+    {
+        Route::prefix('api') // 可以改成自己的 prefix 或是移除，以下類推
+             ->middleware('api')
+             ->namespace($this->namespace)
+             ->group(base_path('routes/api.php')); // 這裡定義了要套用到哪一個設定檔
+    }
+    */
 }
